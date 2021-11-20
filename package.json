@@ -1,0 +1,19 @@
+{
+  "name": "risk-calculator",
+  "version": "1.0.0",
+  "description": "risk calculator for insurance packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Amanda Filizola",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sucrase": "^3.20.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

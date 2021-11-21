@@ -7,7 +7,7 @@ import { married, mortgaged, upper_age_limit, upper_income } from "../../constan
 export class algorithm_score_use_case {
     constructor(){}
 
-    /**
+    /** describing base_score to use in JsDoc comments
      * @param {{
      *      auto: { score: number, elegible: boolean },
      *      disability: { score: number, elegible: boolean },

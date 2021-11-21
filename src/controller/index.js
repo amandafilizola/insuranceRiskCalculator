@@ -5,7 +5,8 @@
 import { risk_handler } from "./handler"
 
 /**
- * this function is responsible for receiving the http request, instantiating the handler and returning a response
+ * this function is responsible for receiving the http request,
+ * instantiating the handler and returning a response to client
  * @param {any} request
  * @param {any} response
  * @returns {any}

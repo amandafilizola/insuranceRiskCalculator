@@ -6,6 +6,7 @@ export const valid_marital_status = [ 'married', 'single' ]
 export const married = 'married'
 export const valid_ownership_status = ['owned', 'mortgaged']
 export const mortgaged = 'mortgaged'
+export const blank = ''
 
 export const inelegible = 'ineligible'
 export const economic = 'economic'

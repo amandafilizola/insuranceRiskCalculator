@@ -8,7 +8,6 @@ export class algorithm_score_use_case {
     constructor(){}
 
     /**
-     *
      * @param {{
      *      auto: { score: number, elegible: boolean },
      *      disability: { score: number, elegible: boolean },
@@ -58,7 +57,7 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_house(house, score) {
-        if(house === 0) {
+        if(house === 0 || !house) {
             score.home.elegible = false;
         } else if(house.ownership_status === mortgaged) {
             score.home.score += 1
@@ -75,7 +74,7 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_income(income, score) {
-        if(income === 0) {
+        if(income === 0 || !income) {
             score.disability.elegible = false
         } else if(income > upper_income) {
             score = this.subtract_all_scores(score, 1)

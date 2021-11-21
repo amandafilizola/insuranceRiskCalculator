@@ -1,6 +1,7 @@
 /**
-* @author Amanda Filizola <amandapaivafilizola@gmail.com>
-*/
+ * MIT License, 2021
+ * @author Amanda Filizola <amandapaivafilizola@gmail.com>
+ */
 
 export class base_score_use_case {
     constructor(){}

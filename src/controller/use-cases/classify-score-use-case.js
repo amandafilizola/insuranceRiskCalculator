@@ -1,6 +1,7 @@
 /**
-* @author Amanda Filizola <amandapaivafilizola@gmail.com>
-*/
+ * MIT License, 2021
+ * @author Amanda Filizola <amandapaivafilizola@gmail.com>
+ */
 
 import { blank, economic, economic_upper_bound, inelegible,
     regular, regular_lower_bound, regular_upper_bound, responsible } from "../../constants"

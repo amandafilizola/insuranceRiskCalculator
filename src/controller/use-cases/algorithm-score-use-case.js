@@ -1,6 +1,7 @@
 /**
-* @author Amanda Filizola <amandapaivafilizola@gmail.com>
-*/
+ * MIT License, 2021
+ * @author Amanda Filizola <amandapaivafilizola@gmail.com>
+ */
 
 import { married, mortgaged, upper_age_limit, upper_income } from "../../constants"
 

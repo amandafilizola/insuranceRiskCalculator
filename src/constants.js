@@ -1,6 +1,7 @@
 /**
-* @author Amanda Filizola <amandapaivafilizola@gmail.com>
-*/
+ * MIT License, 2021
+ * @author Amanda Filizola <amandapaivafilizola@gmail.com>
+ */
 
 export const valid_marital_status = [ 'married', 'single' ]
 export const married = 'married'

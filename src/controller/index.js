@@ -4,6 +4,12 @@
 
 import { risk_handler } from "./handler";
 
+/**
+ * this function is responsible for receiving the http request, instantiating the handler and returning a response
+ * @param {any} request
+ * @param {any} response
+ * @returns {any}
+ */
 export function index(request, response) {
     try {
         const input = request.body;

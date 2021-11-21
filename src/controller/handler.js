@@ -10,6 +10,9 @@ import { validate_input_use_case } from "./use-cases/validate-input-use-case";
 export class risk_handler {
 
     constructor(input) {
+        /**
+         * instantiating all use cases of this function
+         */
         this.input = input;
         this.validation_UC = new validate_input_use_case()
         this.base_score_UC = new base_score_use_case()
@@ -17,6 +20,10 @@ export class risk_handler {
         this.classify_score_UC = new classify_score_use_case()
     };
 
+    /**
+     * This function is responsible for handling all use case calls
+     * @returns {score}
+     */
     execute() {
         const valid_input = this.validation_UC.validate(this.input)
         if(valid_input === false) {

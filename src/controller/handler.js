@@ -23,16 +23,12 @@ export class risk_handler {
             throw new Error('invalid input from client');
         }
 
-        const base_score = this.base_score_UC.getBaseScore(this.input.risk_questions)
+        const base_score = this.base_score_UC.get_base_score(this.input.risk_questions)
 
-        let algorithm_score = this.algorithm_score_UC.process_age(this.input.age, base_score);
-        algorithm_score = this.algorithm_score_UC.process_dependents(this.input.dependents, algorithm_score);
-        algorithm_score = this.algorithm_score_UC.process_house(this.input.house, algorithm_score);
-        algorithm_score = this.algorithm_score_UC.process_income(this.input.income, algorithm_score);
-        algorithm_score = this.algorithm_score_UC.process_marital_status(this.input.marital_status, algorithm_score);
-        algorithm_score = this.algorithm_score_UC.process_vehicle(this.input.vehicle, algorithm_score);
+        const algorithm_score = this.algorithm_score_UC.process_score(this.input, base_score);
 
         const result_score = this.classify_score_UC.classify_score(algorithm_score)
+
         return result_score
     }
 }

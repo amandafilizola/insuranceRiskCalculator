@@ -15,7 +15,7 @@ export class base_score_use_case {
      *      life: { score: number, elegible: boolean }
      *  }}
      */
-    getBaseScore(risk_questions_array) {
+    get_base_score(risk_questions_array) {
         const base = risk_questions_array.reduce((sum, item) => sum + item, 0)
         return {
             auto: { score: base, elegible: true },

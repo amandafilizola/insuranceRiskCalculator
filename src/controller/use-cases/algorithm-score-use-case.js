@@ -17,6 +17,29 @@ export class algorithm_score_use_case {
      */
 
     /**
+     * initial process score function
+     * @param {{ age: number,
+     *          dependents: number,
+     *          house: any,
+     *          income: any,
+     *          marital_status: string,
+     *          risk_questions: number[],
+     *          vehicle: any}} input
+     * @param {base_score} base_score
+     * @returns
+     */
+    process_score(input, base_score) {
+
+        let algorithm_score = this.process_age(input.age, base_score);
+        algorithm_score = this.process_dependents(input.dependents, algorithm_score);
+        algorithm_score = this.process_house(input.house, algorithm_score);
+        algorithm_score = this.process_income(input.income, algorithm_score);
+        algorithm_score = this.process_marital_status(input.marital_status, algorithm_score);
+        algorithm_score = this.process_vehicle(input.vehicle, algorithm_score);
+        return algorithm_score
+    }
+
+    /**
      * If the user is over 60 years old, she is ineligible for disability and life insurance.
      * If the user is under 30 years old, deduct 2 risk points from all lines of insurance. If she is between 30 and 40 years old, deduct 1.
      * @param {number} age

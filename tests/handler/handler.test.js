@@ -3,23 +3,23 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-import { risk_handler } from "../../src/controller/handler";
+import { risk_handler } from "../../src/controller/handler"
 /**
  * Unit tests of handler
  */
 
 describe('Validate execute function ', () => {
-    let mock;
+    let mock
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
+            mock = module
+            jest.resetModules()
         })
     })
 
     test('with valid input ', () => {
         const handler = new risk_handler(mock.initial_input)
-        let result = handler.execute();
+        let result = handler.execute()
         expect(result).toStrictEqual(mock.initial_input_result)
     })
 
@@ -30,7 +30,7 @@ describe('Validate execute function ', () => {
 
     test('with valid input ', () => {
         const handler = new risk_handler(mock.initial_input_2)
-        let result = handler.execute();
+        let result = handler.execute()
         expect(result).toStrictEqual(mock.initial_input_result_2)
     })
 })

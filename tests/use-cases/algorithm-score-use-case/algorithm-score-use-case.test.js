@@ -3,8 +3,8 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-import { lower_sub_1_age_limit, married, mortgaged, owned, single, upper_age_limit, upper_income, upper_sub_2_age_limit } from "../../../src/constants";
-import { algorithm_score_use_case } from "../../../src/controller/use-cases/algorithm-score-use-case";
+import { lower_sub_1_age_limit, married, mortgaged, owned, single, upper_age_limit, upper_income, upper_sub_2_age_limit } from "../../../src/constants"
+import { algorithm_score_use_case } from "../../../src/controller/use-cases/algorithm-score-use-case"
 
 const algorithm_score_UC = new algorithm_score_use_case()
 
@@ -12,14 +12,14 @@ const algorithm_score_UC = new algorithm_score_use_case()
  * Unit tests of algorithm_score_use_case
  */
 describe('Validate process_age function ', () => {
-    let mock;
+    let mock
 
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
-        });
-    });
+            mock = module
+            jest.resetModules()
+        })
+    })
 
     test('with over 60 years old', () => {
         expect(algorithm_score_UC.process_age(upper_age_limit + 1, mock.initial_score).disability.elegible).toBe(false)
@@ -44,14 +44,14 @@ describe('Validate process_age function ', () => {
 })
 
 describe('Validate process_dependents function ', () => {
-    let mock;
+    let mock
 
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
-        });
-    });
+            mock = module
+            jest.resetModules()
+        })
+    })
 
     test('with one dependent', () => {
         let result_score = algorithm_score_UC.process_dependents(1, mock.initial_score)
@@ -73,14 +73,14 @@ describe('Validate process_dependents function ', () => {
 })
 
 describe('Validate process_house function ', () => {
-    let mock;
+    let mock
 
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
-        });
-    });
+            mock = module
+            jest.resetModules()
+        })
+    })
 
     test('with inelegible to home if doesnt have any house with 0', () => {
         let result_score = algorithm_score_UC.process_house(0, mock.initial_score)
@@ -112,14 +112,14 @@ describe('Validate process_house function ', () => {
 })
 
 describe('Validate process_income function ', () => {
-    let mock;
+    let mock
 
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
-        });
-    });
+            mock = module
+            jest.resetModules()
+        })
+    })
 
     test('without any income', () => {
         let result_score = algorithm_score_UC.process_income(0, mock.initial_score)
@@ -144,14 +144,14 @@ describe('Validate process_income function ', () => {
 })
 
 describe('Validate process_marital_status function ', () => {
-    let mock;
+    let mock
 
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
-        });
-    });
+            mock = module
+            jest.resetModules()
+        })
+    })
 
     test('with valid married status', () => {
         let result_score = algorithm_score_UC.process_marital_status(married, mock.initial_score)
@@ -173,14 +173,14 @@ describe('Validate process_marital_status function ', () => {
 })
 
 describe('Validate process_vehicle function ', () => {
-    let mock;
+    let mock
 
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
-        });
-    });
+            mock = module
+            jest.resetModules()
+        })
+    })
 
     test('with inelegible to vehicle if doesnt have any vehicle with 0', () => {
         let result_score = algorithm_score_UC.process_vehicle(0, mock.initial_score)
@@ -206,14 +206,14 @@ describe('Validate process_vehicle function ', () => {
 })
 
 describe('Validate subtract_all_scores function ', () => {
-    let mock;
+    let mock
 
     beforeEach(() => {
         return import('./mock').then(module => {
-            mock = module;
-            jest.resetModules();
-        });
-    });
+            mock = module
+            jest.resetModules()
+        })
+    })
 
     test('subtract 1 from all lines', () => {
         let result_score = algorithm_score_UC.subtract_all_scores(mock.initial_score, 1)

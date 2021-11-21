@@ -5,7 +5,6 @@
 
 import { lower_sub_1_age_limit, married, mortgaged, owned, single, upper_age_limit, upper_income, upper_sub_2_age_limit } from "../../../src/constants";
 import { algorithm_score_use_case } from "../../../src/controller/use-cases/algorithm-score-use-case";
-import { initial_score } from "./mock";
 
 const algorithm_score_UC = new algorithm_score_use_case()
 

@@ -1,3 +1,8 @@
+/**
+ * MIT License, 2021
+ * @author Amanda Filizola <amandapaivafilizola@gmail.com>
+ */
+
 import { economic, regular, responsible, inelegible } from "../../../src/constants"
 
 export const valid_economic_input = {

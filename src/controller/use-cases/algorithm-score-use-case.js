@@ -3,7 +3,8 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-import { married, mortgaged, upper_age_limit, upper_income } from "../../constants"
+import { lower_sub_1_age_limit, married, mortgaged, upper_age_limit,
+    upper_income, upper_sub_1_age_limit, upper_sub_2_age_limit } from "../../constants"
 
 export class algorithm_score_use_case {
     constructor(){}
@@ -51,9 +52,9 @@ export class algorithm_score_use_case {
         if(age > upper_age_limit) {
             score.disability.elegible = false
             score.life.elegible = false
-        } else if (age < 30) {
+        } else if (age < upper_sub_2_age_limit) {
             score = this.subtract_all_scores(score, 2)
-        } else if (age < 40 && age > 30) {
+        } else if (age < upper_sub_1_age_limit && age > lower_sub_1_age_limit) {
             score = this.subtract_all_scores(score, 1)
         }
         return score
@@ -129,7 +130,7 @@ export class algorithm_score_use_case {
      */
     process_vehicle(vehicle, score) {
         const year = new Date().getFullYear()
-        if(vehicle.year && (vehicle.year >= year - 5)) {
+        if(vehicle && vehicle.year && (vehicle.year >= year - 5)) {
             score.auto.score += 1
         } else if(vehicle === 0 || !vehicle) {
             score.auto.elegible = false

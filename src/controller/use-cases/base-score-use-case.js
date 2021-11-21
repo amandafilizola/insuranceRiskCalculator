@@ -4,7 +4,7 @@
  */
 
 export class base_score_use_case {
-    constructor(){}
+    constructor() { }
 
     /**
      * calculates base risk from sum of given array and mounts base score object

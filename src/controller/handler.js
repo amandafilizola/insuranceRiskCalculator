@@ -26,7 +26,7 @@ export class risk_handler {
      */
     execute() {
         const valid_input = this.validation_UC.validate(this.input)
-        if(valid_input === false) {
+        if (valid_input === false) {
             throw new Error('invalid input from client')
         }
 

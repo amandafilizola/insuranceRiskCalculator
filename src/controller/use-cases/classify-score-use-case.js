@@ -3,12 +3,14 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-import { blank, economic, economic_upper_bound, inelegible,
-    regular, regular_lower_bound, regular_upper_bound, responsible } from "../../constants"
+import {
+    blank, economic, economic_upper_bound, inelegible,
+    regular, regular_lower_bound, regular_upper_bound, responsible
+} from "../../constants"
 
 
 export class classify_score_use_case {
-    constructor(){}
+    constructor() { }
 
     /**
      * parses the score object to the expected result output
@@ -39,9 +41,9 @@ export class classify_score_use_case {
      */
     map_score(score_number) {
         let classification = blank
-        if(score_number <= economic_upper_bound){
+        if (score_number <= economic_upper_bound) {
             classification = economic
-        } else if(score_number >= regular_lower_bound && score_number <= regular_upper_bound) {
+        } else if (score_number >= regular_lower_bound && score_number <= regular_upper_bound) {
             classification = regular
         } else {
             classification = responsible

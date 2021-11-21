@@ -3,9 +3,16 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-import { economic, economic_upper_bound, regular, regular_lower_bound, regular_upper_bound, responsible, responsible_lower_bound } from "../../../src/constants"
+import {
+    economic, economic_upper_bound, regular, regular_lower_bound,
+    regular_upper_bound, responsible, responsible_lower_bound
+} from "../../../src/constants"
 import { classify_score_use_case } from "../../../src/controller/use-cases/classify-score-use-case"
-import { all_inelegible, all_inelegible_result, inelegible_auto, inelegible_auto_result, inelegible_disability_life, inelegible_disability_life_result, valid_economic_input, valid_economic_input_result, valid_regular_input, valid_regular_input_result, valid_responsible_input, valid_responsible_input_result } from "./mock"
+import {
+    all_inelegible, all_inelegible_result, inelegible_auto, inelegible_auto_result, inelegible_disability_life,
+    inelegible_disability_life_result, valid_economic_input, valid_economic_input_result, valid_regular_input,
+    valid_regular_input_result, valid_responsible_input, valid_responsible_input_result
+} from "./mock"
 
 
 const classify_score_UC = new classify_score_use_case()

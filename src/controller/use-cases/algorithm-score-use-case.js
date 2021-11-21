@@ -3,11 +3,13 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-import { lower_sub_1_age_limit, married, mortgaged, upper_age_limit,
-    upper_income, upper_sub_1_age_limit, upper_sub_2_age_limit } from "../../constants"
+import {
+    lower_sub_1_age_limit, married, mortgaged, upper_age_limit,
+    upper_income, upper_sub_1_age_limit, upper_sub_2_age_limit
+} from "../../constants"
 
 export class algorithm_score_use_case {
-    constructor(){}
+    constructor() { }
 
     /** describing base_score to use in JsDoc comments
      * @param {{
@@ -49,7 +51,7 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_age(age, score) {
-        if(age > upper_age_limit) {
+        if (age > upper_age_limit) {
             score.disability.elegible = false
             score.life.elegible = false
         } else if (age < upper_sub_2_age_limit) {
@@ -67,7 +69,7 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_dependents(dependents, score) {
-        if(dependents > 0) {
+        if (dependents > 0) {
             score.disability.score += 1
             score.life.score += 1
         }
@@ -82,9 +84,9 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_house(house, score) {
-        if(house === 0 || !house) {
+        if (house === 0 || !house) {
             score.home.elegible = false
-        } else if(house.ownership_status === mortgaged) {
+        } else if (house.ownership_status === mortgaged) {
             score.home.score += 1
             score.disability.score += 1
         }
@@ -99,9 +101,9 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_income(income, score) {
-        if(income === 0 || !income) {
+        if (income === 0 || !income) {
             score.disability.elegible = false
-        } else if(income > upper_income) {
+        } else if (income > upper_income) {
             score = this.subtract_all_scores(score, 1)
         }
         return score
@@ -114,7 +116,7 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_marital_status(status, score) {
-        if(status === married) {
+        if (status === married) {
             score.life.score += 1
             score.disability.score -= 1
         }
@@ -130,9 +132,9 @@ export class algorithm_score_use_case {
      */
     process_vehicle(vehicle, score) {
         const year = new Date().getFullYear()
-        if(vehicle && vehicle.year && (vehicle.year >= year - 5)) {
+        if (vehicle && vehicle.year && (vehicle.year >= year - 5)) {
             score.auto.score += 1
-        } else if(vehicle === 0 || !vehicle) {
+        } else if (vehicle === 0 || !vehicle) {
             score.auto.elegible = false
         }
         return score

@@ -128,7 +128,7 @@ describe('Validate process_income function ', () => {
     })
 
     test('with more than limit income', () => {
-        let result_score = algorithm_score_UC.process_income(upper_income+1, mock.initial_score)
+        let result_score = algorithm_score_UC.process_income(upper_income + 1, mock.initial_score)
         expect(result_score.disability.score).toBe(-1)
         expect(result_score.life.score).toBe(-1)
         expect(result_score.auto.score).toBe(-1)
@@ -136,7 +136,7 @@ describe('Validate process_income function ', () => {
     })
 
     test('with regular income', () => {
-        let result_score = algorithm_score_UC.process_income(upper_income-1, mock.initial_score)
+        let result_score = algorithm_score_UC.process_income(upper_income - 1, mock.initial_score)
         expect(result_score.disability.score).toBe(0)
         expect(result_score.life.score).toBe(0)
         expect(result_score.auto.score).toBe(0)
@@ -201,7 +201,7 @@ describe('Validate process_vehicle function ', () => {
 
     test('with valid vehicle out of 5 year limit', () => {
         const year = new Date().getFullYear()
-        let result_score = algorithm_score_UC.process_vehicle({ year: year-6 }, mock.initial_score)
+        let result_score = algorithm_score_UC.process_vehicle({ year: year - 6 }, mock.initial_score)
         expect(result_score.auto.score).toBe(0)
     })
 })

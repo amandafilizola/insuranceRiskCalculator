@@ -3,7 +3,7 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 import '../../constants'
-import { valid_ownership_status, valid_marital_status,valid_properties } from '../../constants'
+import { valid_ownership_status, valid_marital_status, valid_properties } from '../../constants'
 export class validate_input_use_case {
 
     constructor() {

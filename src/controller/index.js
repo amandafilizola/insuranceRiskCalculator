@@ -20,7 +20,7 @@ export function index(request, response) {
 
         return response.status(200).json(result)
 
-    } catch(err) {
+    } catch (err) {
         return response.status(500).json({ "message": err.message })
     }
 }

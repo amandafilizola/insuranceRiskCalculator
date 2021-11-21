@@ -3,7 +3,7 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-export const valid_marital_status = [ 'married', 'single' ]
+export const valid_marital_status = ['married', 'single']
 export const married = 'married'
 export const single = 'single'
 export const valid_ownership_status = ['owned', 'mortgaged']

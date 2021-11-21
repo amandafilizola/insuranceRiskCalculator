@@ -9,9 +9,9 @@ export function index(request, response) {
         const input = request.body;
         const handler = new risk_handler(input)
 
-        handler.execute();
+        const result = handler.execute();
 
-        return response.status(200).json({ "ok": "ok" })
+        return response.status(200).json(result)
 
     } catch(err) {
         return response.status(500).json({ "message": err.message })

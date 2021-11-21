@@ -67,7 +67,7 @@ describe('Validate check_marital_status function ', () => {
 
 describe('Validate check_risk_questions function ', () => {
     test('with valid risk array input', () => {
-        expect(validate_UC.check_risk_questions([0,1,0])).toBe(true)
+        expect(validate_UC.check_risk_questions([0, 1, 0])).toBe(true)
     })
 
     test('with invalid NaN input', () => {
@@ -89,7 +89,7 @@ describe('Validate check_house function ', () => {
     })
 
     test('with invalid input of ownershipstatus', () => {
-        expect(validate_UC.check_house({ ownership_status: 'some string'})).toBe(false)
+        expect(validate_UC.check_house({ ownership_status: 'some string' })).toBe(false)
     })
 
     test('with invalid not object or 0 input', () => {
@@ -107,7 +107,7 @@ describe('Validate check_vehicle function ', () => {
     })
 
     test('with invalid input of year as string', () => {
-        expect(validate_UC.check_vehicle({ year: 'some string'})).toBe(false)
+        expect(validate_UC.check_vehicle({ year: 'some string' })).toBe(false)
     })
 
     test('with invalid input of year as NaN', () => {

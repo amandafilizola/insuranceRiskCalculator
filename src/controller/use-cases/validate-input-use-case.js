@@ -9,7 +9,7 @@ export class validate_input_use_case {
     };
 
     /**
-     *
+     * initial validate function
      * @param {{ age: number,
      *          dependents: number,
      *          house: any,
@@ -31,7 +31,7 @@ export class validate_input_use_case {
     }
 
     /**
-     *
+     * validates if all necessary inputs exist
      * @param {{ age: number,
      *          dependents: number,
      *          house: any,
@@ -46,7 +46,7 @@ export class validate_input_use_case {
     }
 
     /**
-     *
+     * validates if input is a number equal or greater than 0
      * @param {number} input_number
      * @returns {boolean}
      */
@@ -54,7 +54,7 @@ export class validate_input_use_case {
         return Number.isInteger(input_number) && input_number >= 0
     }
     /**
-     *
+     * validates if input of status string is valid: ["married", "single"]
      * @param {string} status
      * @returns {boolean}
      */
@@ -63,7 +63,7 @@ export class validate_input_use_case {
     }
 
     /**
-     *
+     * validates if array of risk questions only consists of 1s and 0s
      * @param {number[]} risk_array
      * @returns {boolean}
      */
@@ -72,7 +72,7 @@ export class validate_input_use_case {
     }
 
     /**
-     *
+     * validates if input of house string is valid: ['owned', 'mortgaged']
      * @param {any} house
      * @returns {boolean}
      */
@@ -82,7 +82,7 @@ export class validate_input_use_case {
     }
 
     /**
-     *
+     * validates if input of vehicle year is valid
      * @param {any} vehicle
      * @returns {boolean}
      */

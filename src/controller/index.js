@@ -2,7 +2,7 @@
  * @author Amanda Filizola <amandapaivafilizola@gmail.com>
  */
 
-import { risk_handler } from "./handler";
+import { risk_handler } from "./handler"
 
 /**
  * this function is responsible for receiving the http request, instantiating the handler and returning a response
@@ -12,10 +12,10 @@ import { risk_handler } from "./handler";
  */
 export function index(request, response) {
     try {
-        const input = request.body;
+        const input = request.body
         const handler = new risk_handler(input)
 
-        const result = handler.execute();
+        const result = handler.execute()
 
         return response.status(200).json(result)
 

@@ -22,7 +22,7 @@ export const valid_properties = [
     "risk_questions",
     "vehicle"
 ]
-export const upper_age_limit = 60;
+export const upper_age_limit = 60
 export const upper_income = 200000
 export const economic_upper_bound = 0
 export const regular_lower_bound = 1

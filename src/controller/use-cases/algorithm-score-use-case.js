@@ -2,7 +2,7 @@
 * @author Amanda Filizola <amandapaivafilizola@gmail.com>
 */
 
-import { married, mortgaged, upper_age_limit, upper_income } from "../../constants";
+import { married, mortgaged, upper_age_limit, upper_income } from "../../constants"
 
 export class algorithm_score_use_case {
     constructor(){}
@@ -30,12 +30,12 @@ export class algorithm_score_use_case {
      */
     process_score(input, base_score) {
 
-        let algorithm_score = this.process_age(input.age, base_score);
-        algorithm_score = this.process_dependents(input.dependents, algorithm_score);
-        algorithm_score = this.process_house(input.house, algorithm_score);
-        algorithm_score = this.process_income(input.income, algorithm_score);
-        algorithm_score = this.process_marital_status(input.marital_status, algorithm_score);
-        algorithm_score = this.process_vehicle(input.vehicle, algorithm_score);
+        let algorithm_score = this.process_age(input.age, base_score)
+        algorithm_score = this.process_dependents(input.dependents, algorithm_score)
+        algorithm_score = this.process_house(input.house, algorithm_score)
+        algorithm_score = this.process_income(input.income, algorithm_score)
+        algorithm_score = this.process_marital_status(input.marital_status, algorithm_score)
+        algorithm_score = this.process_vehicle(input.vehicle, algorithm_score)
         return algorithm_score
     }
 
@@ -81,7 +81,7 @@ export class algorithm_score_use_case {
      */
     process_house(house, score) {
         if(house === 0 || !house) {
-            score.home.elegible = false;
+            score.home.elegible = false
         } else if(house.ownership_status === mortgaged) {
             score.home.score += 1
             score.disability.score += 1
@@ -127,7 +127,7 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_vehicle(vehicle, score) {
-        const year = new Date().getFullYear();
+        const year = new Date().getFullYear()
         if(vehicle.year && (vehicle.year >= year - 5)) {
             score.auto.score += 1
         } else if(vehicle === 0 || !vehicle) {

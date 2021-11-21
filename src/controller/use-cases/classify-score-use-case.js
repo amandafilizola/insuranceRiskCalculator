@@ -37,7 +37,7 @@ export class classify_score_use_case {
      * @returns {string}
      */
     map_score(score_number) {
-        let classification = blank;
+        let classification = blank
         if(score_number <= economic_upper_bound){
             classification = economic
         } else if(score_number >= regular_lower_bound && score_number <= regular_upper_bound) {

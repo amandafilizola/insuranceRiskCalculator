@@ -29,6 +29,12 @@ that should output:
     "life": "regular"
 }
 ```
+## How to run tests
+With the repository open on terminal, type
+```
+npm run test
+```
+to start a test run on Jest. Follow the instructions on the command line.
 
 ## Technical Decisions
 ### Language and Frameworks

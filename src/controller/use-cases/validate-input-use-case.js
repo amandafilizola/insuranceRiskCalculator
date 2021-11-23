@@ -43,7 +43,7 @@ export class validate_input_use_case {
      * @returns {boolean}
      */
     check_all_inputs(input) {
-        return Boolean(valid_properties.every((property) => input.hasOwnProperty(property)))
+        return Boolean(valid_properties.map((property) => input.hasOwnProperty(property)).every(item => item === true))
     }
 
     /**
@@ -78,7 +78,7 @@ export class validate_input_use_case {
      * @returns {boolean}
      */
     check_house(house) {
-        return Boolean((house === 0 ||
+        return Boolean(((house === 0 || !house) ||
             (house && house.ownership_status && valid_ownership_status.includes(house.ownership_status))))
     }
 
@@ -88,7 +88,7 @@ export class validate_input_use_case {
      * @returns {boolean}
      */
     check_vehicle(vehicle) {
-        return Boolean((vehicle === 0 ||
+        return Boolean(((vehicle === 0 || !vehicle) ||
             (vehicle.year && this.check_valid_number(vehicle.year))))
     }
 }

@@ -19,11 +19,9 @@ export const responsible = 'responsible'
 export const valid_properties = [
     "age",
     "dependents",
-    "house",
     "income",
     "marital_status",
     "risk_questions",
-    "vehicle"
 ]
 export const upper_age_limit = 60
 export const upper_sub_2_age_limit = 30

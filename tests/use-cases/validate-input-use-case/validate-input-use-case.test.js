@@ -16,21 +16,6 @@ describe('Validate check_all_inputs function ', () => {
     test('with all valid inputs', () => {
         expect(validate_UC.check_all_inputs(valid_input)).toBe(true)
     })
-
-    test('with missing vehicle input ', () => {
-        const { vehicle, ...invalid_input_no_vehicle } = valid_input
-        expect(validate_UC.check_all_inputs(invalid_input_no_vehicle)).toBe(false)
-    })
-
-    test('with missing house input ', () => {
-        const { house, ...invalid_input_no_vehicle } = valid_input
-        expect(validate_UC.check_all_inputs(invalid_input_no_vehicle)).toBe(false)
-    })
-
-    test('with missing house input ', () => {
-        const { house, ...invalid_input_no_vehicle } = valid_input
-        expect(validate_UC.check_all_inputs(invalid_input_no_vehicle)).toBe(false)
-    })
 })
 
 describe('Validate check_valid_number function ', () => {
@@ -91,10 +76,6 @@ describe('Validate check_house function ', () => {
     test('with invalid input of ownershipstatus', () => {
         expect(validate_UC.check_house({ ownership_status: 'some string' })).toBe(false)
     })
-
-    test('with invalid not object or 0 input', () => {
-        expect(validate_UC.check_house('')).toBe(false)
-    })
 })
 
 describe('Validate check_vehicle function ', () => {
@@ -112,9 +93,5 @@ describe('Validate check_vehicle function ', () => {
 
     test('with invalid input of year as NaN', () => {
         expect(validate_UC.check_vehicle({ year: NaN })).toBe(false)
-    })
-
-    test('with invalid not object or 0 input', () => {
-        expect(validate_UC.check_vehicle('')).toBe(false)
     })
 })

@@ -51,12 +51,12 @@ export class algorithm_score_use_case {
      * @returns {base_score}
      */
     process_age(age, score) {
-        if (age > upper_age_limit) {
+        if (age >= upper_age_limit) {
             score.disability.elegible = false
             score.life.elegible = false
         } else if (age < upper_sub_2_age_limit) {
             score = this.subtract_all_scores(score, 2)
-        } else if (age < upper_sub_1_age_limit && age > lower_sub_1_age_limit) {
+        } else if (age <= upper_sub_1_age_limit && age >= lower_sub_1_age_limit) {
             score = this.subtract_all_scores(score, 1)
         }
         return score

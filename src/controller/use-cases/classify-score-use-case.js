@@ -18,14 +18,24 @@ export class classify_score_use_case {
      *      auto: { score: number, elegible: boolean },
      *      disability: { score: number, elegible: boolean },
      *      home: { score: number, elegible: boolean },
-     *      life: { score: number, elegible: boolean }
+     *      life: { score: number, elegible: boolean },
+     *      umbrella: { score: number, elegible: boolean }
      *  }} score
      * @returns {{ auto: string, disability: string, home: string, life: string }}
      */
     classify_score(score) {
+        const umbrella = 'umbrella'
+
         let result_score = {}
         for (let prop in score) {
             score[prop].elegible ? result_score[prop] = this.map_score(score[prop].score) : result_score[prop] = inelegible
+        }
+
+        for (let prop in result_score) {
+            if(result_score[prop] === economic){
+                result_score[umbrella] = this.map_score(score[umbrella].score)
+                break;
+            }
         }
         return result_score
     }

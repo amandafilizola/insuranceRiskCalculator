@@ -19,6 +19,7 @@ describe('Validate get_base_score function ', () => {
             disability: { score: base, elegible: true },
             home: { score: base, elegible: true },
             life: { score: base, elegible: true },
+            umbrella: { score: base, elegible: false },
         }
         expect(base_score_UC.get_base_score([1, 1, 1])).toStrictEqual(result)
     })
@@ -30,6 +31,7 @@ describe('Validate get_base_score function ', () => {
             disability: { score: base, elegible: true },
             home: { score: base, elegible: true },
             life: { score: base, elegible: true },
+            umbrella: { score: base, elegible: false },
         }
         expect(base_score_UC.get_base_score([0, 0, 0])).toStrictEqual(result)
     })
@@ -41,6 +43,7 @@ describe('Validate get_base_score function ', () => {
             disability: { score: base, elegible: true },
             home: { score: base, elegible: true },
             life: { score: base, elegible: true },
+            umbrella: { score: base, elegible: false },
         }
         expect(base_score_UC.get_base_score([1, 0, 1])).toStrictEqual(result)
     })

@@ -7,5 +7,6 @@ export const initial_score = {
     auto: { score: 0, elegible: true },
     disability: { score: 0, elegible: true },
     home: { score: 0, elegible: true },
-    life: { score: 0, elegible: true }
+    life: { score: 0, elegible: true },
+    umbrella: {score: 0, elegible: false}
 }

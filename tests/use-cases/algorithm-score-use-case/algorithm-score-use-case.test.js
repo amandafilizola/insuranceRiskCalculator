@@ -32,6 +32,7 @@ describe('Validate process_age function ', () => {
         expect(result_score.life.score).toBe(-2)
         expect(result_score.auto.score).toBe(-2)
         expect(result_score.home.score).toBe(-2)
+        expect(result_score.umbrella.score).toBe(-2)
     })
 
     test('between 30 and 40 years old', () => {
@@ -40,6 +41,7 @@ describe('Validate process_age function ', () => {
         expect(result_score.life.score).toBe(-1)
         expect(result_score.auto.score).toBe(-1)
         expect(result_score.home.score).toBe(-1)
+        expect(result_score.umbrella.score).toBe(-1)
     })
 })
 
@@ -132,6 +134,7 @@ describe('Validate process_income function ', () => {
         expect(result_score.life.score).toBe(-1)
         expect(result_score.auto.score).toBe(-1)
         expect(result_score.home.score).toBe(-1)
+        expect(result_score.umbrella.score).toBe(-1)
     })
 
     test('with regular income', () => {
@@ -140,6 +143,7 @@ describe('Validate process_income function ', () => {
         expect(result_score.life.score).toBe(0)
         expect(result_score.auto.score).toBe(0)
         expect(result_score.home.score).toBe(0)
+        expect(result_score.umbrella.score).toBe(0)
     })
 })
 

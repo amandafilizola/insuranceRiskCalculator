@@ -12,7 +12,8 @@ export const initial_input_result = {
     "auto": "regular",
     "disability": "ineligible",
     "home": "economic",
-    "life": "regular"
+    "life": "regular",
+    "umbrella": "economic"
 }
 
 export const initial_input_2 = {
@@ -29,7 +30,8 @@ export const initial_input_result_2 = {
     "auto": "responsible",
     "disability": "ineligible",
     "home": "regular",
-    "life": "responsible"
+    "life": "responsible",
+    "umbrella": "ineligible"
 }
 
 export const initial_invalid_input = {

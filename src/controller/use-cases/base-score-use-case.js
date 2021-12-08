@@ -13,7 +13,8 @@ export class base_score_use_case {
      *      auto: { score: number, elegible: boolean },
      *      disability: { score: number, elegible: boolean },
      *      home: { score: number, elegible: boolean },
-     *      life: { score: number, elegible: boolean }
+     *      life: { score: number, elegible: boolean },
+     *      umbrella: { score: number, elegible: boolean }
      *  }}
      */
     get_base_score(risk_questions_array) {
@@ -23,6 +24,7 @@ export class base_score_use_case {
             disability: { score: base, elegible: true },
             home: { score: base, elegible: true },
             life: { score: base, elegible: true },
+            umbrella: { score: base, elegible: false },
         }
     }
 }

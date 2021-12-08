@@ -9,54 +9,62 @@ export const valid_economic_input = {
     auto: { score: 0, elegible: true },
     disability: { score: 0, elegible: true },
     home: { score: 0, elegible: true },
-    life: { score: 0, elegible: true }
+    life: { score: 0, elegible: true },
+    umbrella: { score: 0, elegible: false },
 }
 export const valid_economic_input_result = {
     auto: economic,
     disability: economic,
     home: economic,
-    life: economic
+    life: economic,
+    umbrella: economic
 }
 
 export const valid_regular_input = {
     auto: { score: 1, elegible: true },
     disability: { score: 1, elegible: true },
     home: { score: 1, elegible: true },
-    life: { score: 1, elegible: true }
+    life: { score: 1, elegible: true },
+    umbrella: { score: 1, elegible: false },
 }
 export const valid_regular_input_result = {
     auto: regular,
     disability: regular,
     home: regular,
-    life: regular
+    life: regular,
+    umbrella: inelegible
 }
 
 export const valid_responsible_input = {
     auto: { score: 3, elegible: true },
     disability: { score: 3, elegible: true },
     home: { score: 3, elegible: true },
-    life: { score: 3, elegible: true }
+    life: { score: 3, elegible: true },
+    umbrella: { score: 3, elegible: false },
 }
 
 export const valid_responsible_input_result = {
     auto: responsible,
     disability: responsible,
     home: responsible,
-    life: responsible
+    life: responsible,
+    umbrella: inelegible
 }
 
 export const inelegible_auto = {
     auto: { score: 3, elegible: false },
     disability: { score: 3, elegible: true },
     home: { score: 3, elegible: true },
-    life: { score: 3, elegible: true }
+    life: { score: 3, elegible: true },
+    umbrella: { score: 3, elegible: false },
 }
 
 export const inelegible_auto_result = {
     auto: inelegible,
     disability: responsible,
     home: responsible,
-    life: responsible
+    life: responsible,
+    umbrella: inelegible
 }
 
 
@@ -87,4 +95,19 @@ export const all_inelegible_result = {
     disability: inelegible,
     home: inelegible,
     life: inelegible
+}
+
+export const valid_mixed_input = {
+    auto: { score: 1, elegible: true },
+    disability: { score: 1, elegible: true },
+    home: { score: 1, elegible: true },
+    life: { score: 0, elegible: true },
+    umbrella: { score: 0, elegible: false },
+}
+export const valid_mixed_input_result = {
+    auto: regular,
+    disability: regular,
+    home: regular,
+    life: economic,
+    umbrella: economic
 }

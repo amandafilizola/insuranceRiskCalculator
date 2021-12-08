@@ -10,7 +10,7 @@ import {
 import { classify_score_use_case } from "../../../src/controller/use-cases/classify-score-use-case"
 import {
     all_inelegible, all_inelegible_result, inelegible_auto, inelegible_auto_result, inelegible_disability_life,
-    inelegible_disability_life_result, valid_economic_input, valid_economic_input_result, valid_regular_input,
+    inelegible_disability_life_result, valid_economic_input, valid_economic_input_result, valid_mixed_input, valid_mixed_input_result, valid_regular_input,
     valid_regular_input_result, valid_responsible_input, valid_responsible_input_result
 } from "./mock"
 
@@ -69,5 +69,13 @@ describe('Validate classify_score function ', () => {
 
     test('with all inelegible', () => {
         expect(classify_score_UC.classify_score(all_inelegible)).toStrictEqual(all_inelegible_result)
+    })
+
+    test('with no economic classification, expected inelegible umbrella insurance', () => {
+        expect(classify_score_UC.classify_score(valid_regular_input)).toStrictEqual(valid_regular_input_result)
+    })
+
+    test('with one economic classification, expected economic umbrella insurance', () => {
+        expect(classify_score_UC.classify_score(valid_mixed_input)).toStrictEqual(valid_mixed_input_result)
     })
 })

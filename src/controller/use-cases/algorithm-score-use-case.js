@@ -151,6 +151,7 @@ export class algorithm_score_use_case {
         score.disability.score -= subtract_number
         score.home.score -= subtract_number
         score.life.score -= subtract_number
+        score.umbrella.score -= subtract_number
         return score
     }
 }
